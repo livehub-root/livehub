@@ -71,7 +71,7 @@ $ DROP TABLE h2_2
 建超级表
 
 ```sql
-$ CREATE TABLE livehub.weight (ts timestamp, height int) TAGS(did bigint, oid bigint)
+$ CREATE TABLE livehub.weight (ts timestamp, weight int) TAGS(did bigint, oid bigint)
 ```
 
 添加
