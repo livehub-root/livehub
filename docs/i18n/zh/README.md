@@ -16,10 +16,11 @@
 
 ### 架构
 
-* 数据库 ： [TDengine](https://github.com/taosdata/TDengine) >=1.6.2
+* 数据库 ： [TDengine](https://github.com/taosdata/TDengine) >=1.6.2 [详情](./TDengine.md)
 * 后　端 ： [Node.js](https://nodejs.org) >=10.16.3 ，[详情](https://github.com/livehub-root/livehub-node)
 * 展　示 ： [php](https://www.php.net) >=7.2.23 ，[详情](https://github.com/livehub-root/livehub-php)
 
 ### 注意
 
+数据库中库与表：[参见](.database.md)
 // Todo
