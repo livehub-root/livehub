@@ -1,40 +1,7 @@
 # 数据库相关
 
-数据表命名
-* 实体用英文复数
-* 数据表用名词+动词方式
-
-## livehub_user
-
-基于 RBAC 设计的用户权限访问控制：用户、角色和权限
-
-* [无组设计参考](https://shuwoom.com/?p=3041)
-* [带组设计参考](https://blog.csdn.net/ljw499356212/article/details/81055141)
-
-本设计为无组
-
-### 建表
-
-实体表
-
-* users：用户
-* roles：角色
-* permissions：权限
-
-关系表
-* user_role：用户角色对照
-* role_permission：角色权限对照
-
-#### users
-
-|字段|类型|说明|
-|-|-|-|
-|time|TIMESTAMP|时间主键|
-|uid|binary(32)|md5(name)|
 
 ## livehub
-
-livehub：设备与数据相关库，存放设备信息和设备生产的数据、辅助记录信息
 
 ```sql
 $ CREATE DATABASE IF NOT EXISTS livehub
@@ -42,30 +9,86 @@ $ CREATE DATABASE IF NOT EXISTS livehub
 
 ### 建表
 
-实体表
+记录设备生产的数据，设备编号、被测实体编号为元数据，测量数据为数据
 
-* meadows：牧场
-* cattles：牛
-* cattle_scales：牛秤
+* did：device id，bigint
+* oid：object id，bigint
 
-数据表
+表名称
 
-* cattle_scale_measure：牛秤测量数据
+* height：身高
+* weight：牛
 
 
-
-#### meadows
-
-#### cattles
+#### height
 
 |字段|类型|说明|
 |-|-|-|
-|time|TIMESTAMP|时间主键|
-|cid|bigint|编号|
+|time|timestamp|时间主键|
+|height|smallint|体高|
+|did|bigint|设备编号|
+|oid|bigint|牛编号|
+
+**体高单位：毫米（mm）**
+
+建超级表
+
+```sql
+$ CREATE TABLE livehub.height (ts timestamp, height smallint) TAGS(did bigint, oid bigint)
+```
+
+添加
+
+```sql
+$ CREATE TABLE h2_2 USING livehub.height TAGS (2, 2)
+```
+
+自动创建字表
+
+```sql
+$ INSERT INTO h1_1 USING livehub.height TAGS (1, 1) VALUES (0, 1000)
+```
 
 
-#### cattle_scales
+删除
 
-#### cattle_scale_measure
+```sql
+$ DROP TABLE h2_2
+```
+
+#### weight
+
+|字段|类型|说明|
+|-|-|-|
+|time|timestamp|时间主键|
+|weight|int|体重|
+|did|bigint|设备编号|
+|oid|bigint|牛编号|
+
+**体重单位：克（g）**
 
 
+建超级表
+
+```sql
+$ CREATE TABLE livehub.weight (ts timestamp, height int) TAGS(did bigint, oid bigint)
+```
+
+添加
+
+```sql
+$ CREATE TABLE w2_2 USING livehub.weight TAGS (2, 2)
+```
+
+自动创建字表
+
+```sql
+$ INSERT INTO w1_1 USING livehub.weight TAGS (1, 1) VALUES (0, 1000)
+```
+
+
+删除
+
+```sql
+$ DROP TABLE w2_2
+```
