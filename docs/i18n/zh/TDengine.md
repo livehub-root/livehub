@@ -1,6 +1,6 @@
 ## 介绍
 
-![TDengine官网介绍]()
+![TDengine官网介绍](/docs/images/TDengine.png)
 
 ## 安装
 
