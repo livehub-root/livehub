@@ -101,7 +101,7 @@ content-type：text/plain
 |-|:-:|:-:|:-|:-|
 |time|是|timestamp|1562150939000|时间戳（毫秒）|
 |oid|是|bigint|10003|被测对象编号|
-|height|是|smallint|300152|体高（mm）|
+|height|是|smallint|15387|体高（mm）|
 |did|是|bigint|1001|设备编号|
 
 注意：
