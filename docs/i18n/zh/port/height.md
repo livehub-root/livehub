@@ -53,7 +53,7 @@ content-type：text/plain
 ### 2、响应
 
 |参数名称|是否必选|描述|
-|-|-|-|-|-|-|
+|-|-|-|
 |code|是|int|返回码|
 |msg|是|string|返回信息|
 |data|是|object|一般是空|
