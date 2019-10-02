@@ -23,6 +23,15 @@ timestamp
 * time 也可以是时间字符串，但格式必须为 '2018-06-01 12:38:03.001'
 * 多组数据时请以 time 做升序排列
 
+smallint
+* 正整数，小于 32767
+
+int
+* 正整数，小于 2^31-1
+
+bigint
+* 正整数，小于 2^59
+
 ## 请求数据
 
 请求方法 GET
@@ -49,7 +58,7 @@ height?stime=1562150930000&oid=10003&limit=100
 等价于：
 
 ```sql
-select time, oid, height, did from height where stime>1562150930000 and oid=10003 limit 100
+select time, oid, height, did from height where stime > 1562150930000 and oid = 10003 limit 100
 ```
 
 ### 2、响应
