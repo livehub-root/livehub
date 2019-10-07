@@ -1,6 +1,4 @@
-# livehub
-
-## 欢迎来到 livehub ！
+# LiveHub
 
 ## 介绍
 
@@ -26,4 +24,3 @@
 
 接口对照：[参见](./index.md)
 
-// Todo
