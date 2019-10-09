@@ -20,7 +20,7 @@
 timestamp
 * 精确到毫秒
 * 正整数：1562150930000
-* time 也可以是时间字符串，但格式必须为 '2018-06-01 12:38:03.001'
+* time 也可以是时间字符串，~~但格式必须为 '2018-06-01 12:38:03.001'~~
 * 多组数据时请以 time 做升序排列
 
 smallint
@@ -67,7 +67,8 @@ select time, oid, height, did from height where stime > 1562150930000 and oid = 
 |-|:-:|:-:|:-|
 |code|是|int|返回码|
 |msg|是|string|返回信息|
-|data|是|object|结果集|
+|+data|是|array|结果集|
+|+fields|是|array|结果集对应字段|
 
 示例：
 ```json
@@ -75,16 +76,24 @@ select time, oid, height, did from height where stime > 1562150930000 and oid = 
     "code": 0,
     "msg": "ok",
     "data": [
-        {
-            "time": "2018-06-01 12:38:03.001",
-            "oid": 10003,
-            "height": 15387,
-        },
-        {
-            "time": "1527827884001",
-            "oid": 10004,
-            "height": 17387,
-        }
+        [
+            "2019-10-02T01:11:29.356Z",
+            "1n",
+            1000,
+            "1n"
+        ],
+        [
+            "2018-06-01T04:38:03.001Z",
+            "10003n",
+            15387,
+            "1001n"
+        ]
+    ],
+    "fields": [
+        "ts",
+        "oid",
+        "height",
+        "did"
     ]
 }
 ```
@@ -113,12 +122,12 @@ content-type：text/plain
     "did": 1001,
     "data": [
         {
-            "time": "2018-06-01 12:38:03.001",
+            "time": 1527827883001,
             "oid": 10003,
             "height": 15387,
         },
         {
-            "time": "1527827884001",
+            "time": 1527827884001,
             "oid": 10004,
             "height": 17387,
         }
@@ -139,7 +148,6 @@ content-type：text/plain
 ```json
 {
     "code": 0,
-    "msg": "ok",
-    "data": {}
+    "msg": "ok"
 }
 ```
