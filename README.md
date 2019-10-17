@@ -4,8 +4,9 @@ Livehub is an open source hub to allow IoT devices to connect to cloud servers v
 - Post interfaces for publishers, the IoT devices, to submit data
 - Get interfaces for consumers to obtain data
 
-Architeture
+### Architeture
 
+![image](./docs/images/architecture.png)
 
 For more details, refer to:
 * english(./docs/i18n/en)
