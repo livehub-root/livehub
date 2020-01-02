@@ -5,8 +5,9 @@
 - 设备访问注册接口，传入设备编号SN和注册码，成功系统给返回token，失败返回错误信息
 
 设备注册信息包括：
+- Data Interface Enum
 - Device Name
-- 
+- Device Typ
 - Vender ID
 - Vender Name
 - Model Number
