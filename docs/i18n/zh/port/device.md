@@ -12,3 +12,6 @@
 - Firmware version
 - Firmware date
 
+设备状态信息包括：
+- 电池电量
+- 故障信息
