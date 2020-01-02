@@ -18,13 +18,13 @@
 |limit|否|正整数|1000|行数|
 
 注意：
-* etime > stime ,区间 (stime,etime]
+* tend > tstart ,区间 (tstart,tend]
 * limit 不传，默认 1000
 
 示例：
 
 ```
-height?stime=1562150930000&oid=10003&limit=100
+height?tstart=2018-06-01 12:38:03&oid=10003&limit=100
 ```
 
 等价于：
