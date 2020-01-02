@@ -7,11 +7,6 @@
 * 设备接⼊云服务，具有标准接⼝
 * 设备产⽣的数据，具有标准格式
 
-## 内容列表
-
-* [架构](#架构)
-* [注意](#注意)
-
 ### 架构
 
 * 数据库 ： [TDengine](https://github.com/taosdata/TDengine) >=1.6.2 [详情](./TDengine.md)
