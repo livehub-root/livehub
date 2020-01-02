@@ -6,6 +6,7 @@
 
 设备注册信息包括：
 - Device Name
+- 
 - Vender ID
 - Vender Name
 - Model Number
@@ -13,6 +14,7 @@
 - Firmware date
 
 设备状态信息包括：
-- 电池电量
-- 故障信息
-- 使用统计
+- 电池电量：多条记录，每条记录为{time:xxx, battery:xx}
+- 故障信息：多条记录，每条记录为{time:xxx, info:xx}
+- 使用统计：多条记录，每条记录为{time:xxx, info:xx}
+
